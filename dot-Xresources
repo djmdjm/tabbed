@@ -1,0 +1,19 @@
+*VT100*translations:    #override \n\
+	Shift Ctrl <Key>V: insert-selection(CLIPBOARD) \n\
+	Shift Ctrl <Key>C: copy-selection(CLIPBOARD) \n\
+        Shift Ctrl <Key>N: exec-formatted("/home/djm/bin/tabbed-xterm %t", EMPTY)
+
+XTerm*faceName: terminus
+XTerm*faceSize: 16
+XTerm*background: #000000
+XTerm*foreground: #cccccc
+XTerm*scrollBar: true
+XTerm*loginShell: true
+XTerm*rightScrollBar: true
+XTerm*jumpScroll: true
+XTerm*saveLines: 10240
+XTerm*scrollTtyOutput: false
+XTerm*scrollKey: true
+*customization: -color
+XTerm*termName:  xterm-256color
+
