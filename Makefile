@@ -20,11 +20,11 @@ options:
 
 ${OBJ}: config.h config.mk
 
-config.h:
+config.h: config.def.h
 	@echo creating $@ from config.def.h
 	@cp config.def.h $@
 
-tabbed: tabbed.o
+tabbed: tabbed.o config.h
 	@echo CC -o $@
 	@${CC} -o $@ tabbed.o ${LDFLAGS}
 
@@ -42,14 +42,15 @@ dist: clean
 	@rm -rf tabbed-${VERSION}
 
 install: all
-	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
-	@mkdir -p ${DESTDIR}${PREFIX}/bin
-	@cp -f tabbed ${DESTDIR}${PREFIX}/bin
-	@chmod 755 ${DESTDIR}${PREFIX}/bin/tabbed
-	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
-	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
-	@sed "s/VERSION/${VERSION}/g" < tabbed.1 > ${DESTDIR}${MANPREFIX}/man1/tabbed.1
-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/tabbed.1
+	install tabbed ~/bin
+#	@echo installing executable file to ${DESTDIR}${PREFIX}/bin
+#	@mkdir -p ${DESTDIR}${PREFIX}/bin
+#	@cp -f tabbed ${DESTDIR}${PREFIX}/bin
+#	@chmod 755 ${DESTDIR}${PREFIX}/bin/tabbed
+#	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
+#	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
+#	@sed "s/VERSION/${VERSION}/g" < tabbed.1 > ${DESTDIR}${MANPREFIX}/man1/tabbed.1
+#	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/tabbed.1
 
 uninstall:
 	@echo removing executable file from ${DESTDIR}${PREFIX}/bin
