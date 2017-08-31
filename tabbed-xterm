@@ -1,0 +1,6 @@
+#!/bin/sh
+
+#exec /usr/local/google/home/djm/bin/tabbed -c -g 664x532 xterm -into
+#exec /usr/local/google/home/djm/bin/tabbed -c -g 820x600 xterm -into
+exec /usr/local/google/home/djm/bin/tabbed -c -g 899x724 xterm -into
+
