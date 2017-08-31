@@ -979,9 +979,9 @@ setup(void) {
 			wx = -1;
 		if(bitm & YNegative && wy == 0)
 			wy = -1;
-		if(bitm & (HeightValue|WidthValue))
+/*		if(bitm & (HeightValue|WidthValue))
 			isfixed = 1;
-
+*/
 		dw = DisplayWidth(dpy, screen);
 		dh = DisplayHeight(dpy, screen);
 		if(wx < 0)
